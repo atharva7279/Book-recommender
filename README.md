@@ -1,15 +1,52 @@
-# Semantic Book Recommender with LLMs 
+# LLM Semantic Book Recommender
+
+## Overview
+
+LLM Semantic Book Recommender is an AI-powered recommendation system that retrieves books based on the semantic meaning of a user's query instead of exact keyword matching. The application generates vector embeddings for book descriptions, stores them in a vector database, and performs similarity search to recommend the most relevant books. It also classifies books into categories and predicts the emotional tone of each recommendation.
+
+## Features
+
+- Semantic book search using natural language queries
+- Vector similarity search with embeddings
+- Zero-shot classification for book categorization
+- Emotion classification of book descriptions
+- Interactive Gradio web interface
+- End-to-end recommendation pipeline from preprocessing to retrieval
+
+## Workflow
+
+1. Load and preprocess the book dataset.
+2. Generate embeddings for book descriptions.
+3. Store embeddings in ChromaDB.
+4. Perform semantic similarity search for user queries.
+5. Classify retrieved books using zero-shot classification.
+6. Predict the emotional tone of recommendations.
+7. Display results through the Gradio interface.
+
+## Tech Stack
+
+### Programming Language
+
+- Python
+
+### Libraries and Frameworks
+
+- LangChain
+- ChromaDB
+- OpenAI Embeddings
+- Hugging Face Transformers
+- Pandas
+- NumPy
+- Gradio
+
+### Machine Learning
+
+- Semantic Embeddings
+- Vector Similarity Search
+- Zero-Shot Classification
+- Emotion Classification
 
 
-* Text data cleaning (code in the notebook `data-exploration.ipynb`)
-* Semantic (vector) search and how to build a vector database (code in the notebook `vector-search.ipynb`). This allows users to find the most similar books to a natural language query (e.g., "a book about a person seeking revenge").
-* Doing text classification using zero-shot classification in LLMs (code in the notebook `text-classification.ipynb`). This allows us to classify the books as "fiction" or "non-fiction", creating a facet that users can filter the books on. 
-* Doing sentiment analysis using LLMs and extracting the emotions from text (code in the notebook `sentiment-analysis.ipynb`). This will allow users to sort books by their tone, such as how suspenseful, joyful or sad the books are.
-* Creating a web application using Gradio for users to get book recommendations (code in the file `gradio-dashboard.py`).
-
-A requirements.txt file containing all the project dependencies is provided as part of this repo.
-
-In order to create your vector database, you'll need to create a .env file in your root directory containing your Gemini API key as `GOOGLE_API_KEY`.
-
-The data for this project can be downloaded from Kaggle. Instructions on how to do this are also in the repo.
-
+```bash
+python gradio-dashboard.py
+```
